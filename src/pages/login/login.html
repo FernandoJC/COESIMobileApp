@@ -1,0 +1,59 @@
+<ion-content padding>
+
+  <div class="row">
+    <div class="col col-center">
+      <!-- COESI Logo image -->
+      <div class="row">
+        <div class="col col-70 col-center" text-center>
+          <img src="../../assets/images/coesi_logo.png" style="width: 100px; height: 100px; margin-top: 10%" />
+        </div>
+      </div>
+      <!-- Bievenido label -->
+      <div class="row">
+        <div class="col col-70 col-center" text-center>
+          <h1 style="color: #ffffff; font-size: 50px; font-weight: 300; width: 100%">Bienvenido</h1>
+        </div>
+      </div>
+
+      <!-- Form -->
+
+      <!-- Usuario input -->
+      <div class="row">
+        <div class="col col-70 col-center" text-center>
+          <!-- NOMBRE DE USUARIO -->
+          <ion-input type="text" placeholder="Nombre de usuario" [(ngModel)]="usuario" text-center></ion-input>
+        </div>
+      </div>
+      <!-- Contraseña input -->
+      <div class="row">
+        <div class="col col-70 col-center" text-center>
+          <!-- CONTRASEÑA -->
+          <ion-input type="password" placeholder="Contraseña" style="color: #ffffff" [(ngModel)]="password" text-center></ion-input>
+        </div>
+      </div>
+
+      <!-- Botón Autenticar -->
+      <div class="row">
+        <div class="col col-25 col-center" text-center>
+          <button ion-button round margin-top (click)="Autenticar()" color="secondary-coesi" style="max-width: 250px; min-height: 50px; width: 250px;">
+              Ingresar
+           </button>
+        </div>
+      </div>
+      <!-- End Form -->
+
+      <!-- Error -->
+      <div class="row" *ngIf="error_estado">
+        <div class="col col-50 col-center" text-center>
+          <p text-center>
+            {{error_mensaje}}
+          </p>
+        </div>
+      </div>
+      <!-- End Error -->
+    </div>
+  </div>
+
+
+
+</ion-content>

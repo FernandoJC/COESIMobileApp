@@ -1,0 +1,25 @@
+page-login ion-content {
+    background-image: url("../../assets/images/login/background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+page-login input {
+    background-color: transparent;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+page-login p{
+    color: #EEEEEE;
+    font-weight: bold;
+    font-size: 17px;    
+}
+
+.text-input::-moz-placeholder { color: #efefef; }
+.text-input:-ms-input-placeholder { color: #efefef; }  
+.text-input::-webkit-input-placeholder { text-indent: 0; color: #efefef; }

@@ -1,15 +1,36 @@
 <ion-menu [content]="content">
   <ion-header>
-    <ion-toolbar>
-      <ion-title>Menu</ion-title>
+    <ion-toolbar color="dark">
+      <!-- Imagen -->
+      <div class="row">
+        <div class="col" text-center>
+          <img src="../assets/images/inicio/profile.png" alt="" style="width: 100px; height: 100px; margin: 10px 10px 0px 10px" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col" style="color: white" text-center>
+          <!-- Nombre usuario -->
+          <p><b>Fernando Jiménez Calsín</b></p>
+          <!-- Correo electrónico -->
+          <p>fjimenez@coesi.pe</p>
+        </div>
+      </div>
     </ion-toolbar>
   </ion-header>
 
   <ion-content>
-    <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
-      </button>
+    <ion-list no-lines>
+      <div *ngFor="let pagina of paginas" (click)="abrirPagina(pagina)" menuClose>
+        <button *ngIf="pagina.title!='Cerrar sesión'" ion-item>
+            <!-- <ion-icon [name]="pagina.icon" item-left></ion-icon> -->
+            {{pagina.title}}
+        </button>
+        <button *ngIf="pagina.title=='Cerrar sesión'" style="position:absolute; bottom: 0" ion-item>
+            <!-- <ion-icon [name]="pagina.icon" item-left></ion-icon> -->
+            {{pagina.title}}
+        </button>
+      </div>
     </ion-list>
   </ion-content>
 

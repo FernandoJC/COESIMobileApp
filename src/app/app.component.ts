@@ -1,30 +1,39 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
+import { InicioPage } from '../pages/inicio/inicio';
 import { ListPage } from '../pages/list/list';
+import { LoginPage } from "../pages/login/login";
+import { LoginProvider } from "../providers/login/login.provider";
 
 @Component({
   templateUrl: 'app.html'
 })
-export class MyApp {
+export class MyApp implements OnInit {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = InicioPage;
 
-  pages: Array<{title: string, component: any}>;
+  paginas: Array<{ title: string, component: any }>;
+  // used for an example of ngFor and navigation
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
-    this.initializeApp();
-
-    // used for an example of ngFor and navigation
-    this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+  ngOnInit(): void {
+    this.paginas = [
+      { title: 'Inicio', component: InicioPage },
+      { title: 'List', component: ListPage },
+      { title: 'Cerrar sesión', component: LoginPage }
     ];
+  }
 
+  constructor
+  (
+    public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,
+    private loginProvider: LoginProvider
+  ) 
+  {
+    this.initializeApp();
   }
 
   initializeApp() {
@@ -36,9 +45,12 @@ export class MyApp {
     });
   }
 
-  openPage(page) {
+  abrirPagina(pagina) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
+    if (pagina.component == LoginPage) {
+      this.loginProvider.CerrarSesion();
+    }
+    this.nav.setRoot(pagina.component);
   }
 }
