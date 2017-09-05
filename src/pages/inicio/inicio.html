@@ -1,10 +1,10 @@
 <ion-header>
-  <ion-navbar color="primary-inicio">
+  <ion-navbar color="dark">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-      <div style="color: white">
+      <div>
         COESI
         <p class="subtitle">Consultores de estadística e informática</p>
       </div>
@@ -12,24 +12,29 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding style="background-color: #00B0FF">
-  <div>
-    <h3>Ionic Menu Starter</h3>
+<ion-content padding>
+  <ion-slides pager>
 
-    <p>
-      If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-    </p>
-    <ul>
-      <!-- <li>{{usuario.id}}</li>
-        <li>{{usuario.nombre}}</li>
-        <li>{{usuario.usuario}}</li>
-        <li>{{usuario.email}}</li>
-        <li>{{usuario.authtoken}}</li>
-        <li>{{usuario.rol.id}}</li>
-        <li>{{usuario.rol.nombre}}</li> -->
-    </ul>
+    <ion-slide>
+      <div style="color: #424242">
+        <h2>Bievenido a COESI App</h2>
+        <p>
+          Esta aplicación para dispositivos móviles ha sido desarrollada con el fin de apoyar al encuestador en su labor.
+        </p>
+        <br>
+        <p>
+          A continuación podrá iniciar un tutorial que esperamos lo guíe sobre el uso de las funcionalidades.
+        </p>
+      </div>
+    </ion-slide>
 
-    <button ion-button secondary menuToggle>Toggle Menu</button>
+    <ion-slide>
+      <h2>Funcionalidad 01</h2>
+    </ion-slide>
 
-  </div>
+    <ion-slide>
+      <h2>Funcionalidad 02</h2>
+    </ion-slide>
+
+  </ion-slides>
 </ion-content>
