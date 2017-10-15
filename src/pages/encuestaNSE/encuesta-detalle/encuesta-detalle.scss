@@ -1,0 +1,36 @@
+page-encuesta-detalle .navigator {
+    align-items: flex-start !important;
+}
+
+page-encuesta-detalle .navigator .title {
+    font-weight: bold;
+}
+
+page-encuesta-detalle .navigator .navigator-icon {
+    min-height: auto;
+    min-width: auto;
+    margin-right: 0px;
+}
+
+page-encuesta-detalle .navigator .navigator-icon ion-icon {
+    font-size: 27px;
+    color: #222;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+page-encuesta-detalle ion-scroll {
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+page-encuesta-detalle ion-scroll .scroll-content {
+    padding: 0px !important;
+}
+
+page-encuesta p {
+    color: black;
+}

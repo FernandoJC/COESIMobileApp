@@ -4,9 +4,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { InicioPage } from '../pages/inicio/inicio';
-import { ListPage } from '../pages/list/list';
 import { LoginPage } from "../pages/login/login";
 import { LoginProvider } from "../providers/login/login.provider";
+import { EncuestaPage } from "../pages/encuestaNSE/encuesta";
 
 @Component({
   templateUrl: 'app.html'
@@ -14,16 +14,17 @@ import { LoginProvider } from "../providers/login/login.provider";
 export class MyApp implements OnInit {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = InicioPage;
+  // rootPage: any = InicioPage;
+  rootPage: any = EncuestaPage;
 
-  paginas: Array<{ title: string, component: any }>;
+  paginas: Array<{ title: string, component: any, encuesta: string }>;
   // used for an example of ngFor and navigation
 
   ngOnInit(): void {
     this.paginas = [
-      { title: 'Inicio', component: InicioPage },
-      { title: 'List', component: ListPage },
-      { title: 'Cerrar sesión', component: LoginPage }
+      { title: 'Inicio', component: InicioPage, encuesta: '' },
+      { title: 'Nivel socioeconómico', component: EncuestaPage, encuesta: 'nse' },
+      { title: 'Cerrar sesión', component: LoginPage, encuesta: ''}
     ];
   }
 
@@ -51,6 +52,6 @@ export class MyApp implements OnInit {
     if (pagina.component == LoginPage) {
       this.loginProvider.CerrarSesion();
     }
-    this.nav.setRoot(pagina.component);
+    this.nav.setRoot(pagina.component, {pagina: pagina});
   }
 }

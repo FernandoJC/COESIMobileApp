@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar color="primary-encuestaNSE">
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Niveles socioeconómicos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <button ion-item *ngFor="let encuesta of encuestas" (click)="DetalleEncuesta(encuesta)">
+      <p class="fs-14" color="dark"><b> {{encuesta.vivienda.direccion}} </b></p>
+      <p class="fs-12">{{encuesta.vivienda.zona}}</p>
+    </button>
+  </ion-list>
+
+  <ion-fab right bottom>
+    <button ion-fab color="secondary-encuestaNSE" (click)="NuevaEncuesta()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>
